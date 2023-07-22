@@ -28,8 +28,39 @@ s.pop() # should return 1
 s.size() # should return 0
 """
 
+class Stack:
+    """
+    A custom Python Stack class. Loaded with the usual methods.
+
+    doctest:
+    >>> s = Stack()
+    >>> s.push("hello ")
+    >>> s.push("world,")
+    >>> s.push(" !")
+    >>> s.size()
+    3
+    >>> s.pop()
+    ' !'
+    >>> s.size()
+    2
+    """
+    items: list[any]
+
+    def __init__(self) -> None:
+        self.items = []
+
+    def push(self, item: any) -> None:
+        self.items.append(item)
+
+    def pop(self) -> any:
+        return self.items.pop()
+
+    def size(self) -> int:
+        return len(self.items)
 
 
 if __name__ == '__main__':
     import doctest
+    print()
     doctest.testmod()
+    print()
