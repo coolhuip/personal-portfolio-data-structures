@@ -57,6 +57,11 @@ class Stack:
     >>> s = Stack()
     >>> s.pop()
     IndexError: pop from empty list
+    >>> s.is_empty()
+    True
+    >>> s.push(1)
+    >>> s.is_empty()
+    False
     """
     items: list[Any]
 
@@ -76,10 +81,7 @@ class Stack:
         return len(self.items)
     
     def is_empty(self) -> bool:
-        if len(self.items) == 0:
-            return True
-        else:
-            return False
+        return len(self.items) == 0
 
 
 if __name__ == '__main__':
