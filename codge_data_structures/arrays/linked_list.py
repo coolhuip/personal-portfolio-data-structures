@@ -1,10 +1,8 @@
 # Hey, Copilot! I want you to give me a data structure assignment where I have
 # to implement a class (and its standard methods) with custom code. Thanks!
 
-# Path: codge_data_structures\arrays\queue.py
-# Compare this snippet from codge_data_structures\arrays\stack.py:
-
-
+# Path: codge_data_structures\arrays\linked_list.py
+# Compare this snippet from codge_data_structures\arrays\queue.py:
 """
 Day 3: Linked List
 
@@ -36,3 +34,16 @@ ll.remove_head() # should return 2
 ll.remove_head() # should return 3
 ll.size() # should return 0
 """
+from __future__ import annotations
+from typing import Any, Union, Optional
+
+
+
+
+
+
+if __name__ == '__main__':
+    import doctest
+    print()
+    doctest.testmod()
+    print()

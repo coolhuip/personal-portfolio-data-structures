@@ -34,5 +34,16 @@ q.dequeue() # should return 2
 q.dequeue() # should return 3
 q.size() # should return 0
 """
+from __future__ import annotations
+from typing import Any, Union, Optional
 
 
+
+
+
+
+if __name__ == '__main__':
+    import doctest
+    print()
+    doctest.testmod()
+    print()

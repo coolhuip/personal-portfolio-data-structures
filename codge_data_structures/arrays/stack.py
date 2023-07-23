@@ -29,6 +29,8 @@ s.pop() # should return 2
 s.pop() # should return 1
 s.size() # should return 0
 """
+from __future__ import annotations
+from typing import Any, Union, Optional
 
 
 class Stack:
@@ -56,22 +58,21 @@ class Stack:
     >>> s.pop()
     IndexError: pop from empty list
     """
-    items: list[any]
+    items: list[Any]
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.items = []
 
-    def push(self, item: any) -> None:
+    def push(self, item: Any) -> None:
         self.items.append(item)
 
-    def pop(self) -> any:
+    def pop(self) -> Optional[Any]:
         try:
             return self.items.pop()
         except IndexError as e:
             print(f"IndexError: {e}")
 
     def size(self) -> int:
-        # return len(self.items)
         return len(self.items)
     
     def is_empty(self) -> bool:
