@@ -28,21 +28,31 @@ s.pop() # should return 1
 s.size() # should return 0
 """
 
+
 class Stack:
     """
     A custom Python Stack class. Loaded with the usual methods.
 
     doctest:
     >>> s = Stack()
-    >>> s.push("hello ")
-    >>> s.push("world,")
-    >>> s.push(" !")
-    >>> s.size()
+    >>> s.push(1)
+    >>> s.push(2)
+    >>> s.push(3)
+    >>> s.size() # should return 3
     3
-    >>> s.pop()
-    ' !'
-    >>> s.size()
+    >>> s.pop() # should return 3
+    3
+    >>> s.pop() # should return 2
     2
+    >>> s.pop() # should return 1
+    1
+    >>> s.size() # should return 0
+    0
+    >>> pass
+    >>> pass
+    >>> s = Stack()
+    >>> s.pop()
+    IndexError: pop from empty list
     """
     items: list[any]
 
@@ -53,10 +63,20 @@ class Stack:
         self.items.append(item)
 
     def pop(self) -> any:
-        return self.items.pop()
+        try:
+            return self.items.pop()
+        except IndexError as e:
+            print(f"IndexError: {e}")
 
     def size(self) -> int:
+        # return len(self.items)
         return len(self.items)
+    
+    def is_empty(self) -> bool:
+        if len(self.items) == 0:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
